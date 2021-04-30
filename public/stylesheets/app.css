@@ -1,0 +1,16 @@
+#cluster-map{
+    width: 100%;
+    height: 500px;
+}
+
+#map{
+    width: 100%;
+    height: 350px;
+}
+
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+  
+    display: flex;
+    align-items: center;
+}
