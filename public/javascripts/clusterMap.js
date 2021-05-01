@@ -2,8 +2,8 @@ mapboxgl.accessToken = mapToken;
 const map = new mapboxgl.Map({
     container: 'cluster-map',
     style: 'mapbox://styles/mapbox/dark-v10',
-    center: [78.9629, 20.5937],
-    zoom: 3
+    center: [80.9629, 21.5937],
+    zoom: 3.75
 });
 
 map.addControl(new mapboxgl.NavigationControl());
@@ -18,8 +18,8 @@ type: 'geojson',
 // from 12/22/15 to 1/21/16 as logged by USGS' Earthquake hazards program.
 data: campgrounds,
 cluster: true,
-clusterMaxZoom: 14, // Max zoom to cluster points on
-clusterRadius: 50 // Radius of each cluster when clustering points (defaults to 50)
+clusterMaxZoom: 10, // Max zoom to cluster points on
+clusterRadius: 40 // Radius of each cluster when clustering points (defaults to 50)
 });
  
 map.addLayer({
@@ -37,19 +37,19 @@ paint: {
 'step',
 ['get', 'point_count'],
 '#51bbd6',
-15,
+12,
 '#f1f075',
-50,
+30,
 '#f28cb1'
 ],
 'circle-radius': [
 'step',
 ['get', 'point_count'],
-15,
-15,
 20,
-50,
-25
+12,
+30,
+30,
+40
 ]
 }
 });
@@ -71,11 +71,13 @@ id: 'unclustered-point',
 type: 'circle',
 source: 'campgrounds',
 filter: ['!', ['has', 'point_count']],
+/*layout: {
+    "icon-image": "campsite-15", // THIS SHOULD BE A MARKER
+    "icon-size": 1
+},*/
 paint: {
-'circle-color': '#11b4da',
-'circle-radius': 4,
-'circle-stroke-width': 1,
-'circle-stroke-color': '#fff'
+'circle-color': '#fff',
+'circle-radius': 6
 }
 });
  
@@ -102,24 +104,23 @@ map.on('click', 'clusters', function (e) {
 // the unclustered-point layer, open a popup at
 // the location of the feature, with
 // description HTML from its properties.
-map.on('click', 'unclustered-point', function (e) {
-    const { popUpMarkup } = e.features[0].properties;
-    console.log(e.features[0]);
-    const coordinates = e.features[0].geometry.coordinates.slice();
+    map.on('click', 'unclustered-point', function (e) {
+        const { popUpMarkup } = e.features[0].properties;
+        const coordinates = e.features[0].geometry.coordinates.slice();
 
-    // Ensure that if the map is zoomed out such that
-    // multiple copies of the feature are visible, the
-    // popup appears over the copy being pointed to.
-    while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-    coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-    }
-    
-    new mapboxgl.Popup()
-    .setLngLat(coordinates)
-    .setHTML(popUpMarkup)
-    .addTo(map);
+        // Ensure that if the map is zoomed out such that
+        // multiple copies of the feature are visible, the
+        // popup appears over the copy being pointed to.
+        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+        }
+        
+        new mapboxgl.Popup()
+        .setLngLat(coordinates)
+        .setHTML(popUpMarkup)
+        .addTo(map);
     });
-    
+
     map.on('mouseenter', 'clusters', function () {
         map.getCanvas().style.cursor = 'pointer';
     });
