@@ -5,9 +5,10 @@ In order to review or create a campground and review, you have to login/register
 This project was part of Colt Steele's Web Developer Bootcamp on Udemy.
 
 It project was created using Node.js, Express, MongoDB, and Bootstrap.
-Also Passport.js was used to handle authentication.
-Cloudinary was used for cloud image storage.
-And MapboxGL was used to represent all the campgrounds all over the country.
+Also Passport.js is used to handle authentication.
+Cloudinary is used for cloud image storage.
+MapboxGL is used to represent all the campgrounds all over the country.
+Helmetjs is used to strengthen the security.
 
 ## Snapshots of the website
 * HomePage
@@ -25,6 +26,7 @@ And MapboxGL was used to represent all the campgrounds all over the country.
 * Users can create, update, and delete the campgrounds
 * Users can review campgrounds, and edit or delete their reviews.
 * Campgrounds can be searched via the Mapbox and viewed.
+* Can upload multiple images for a campground.
 ## To run the Website locally
 * Install [Mongodb](https://www.mongodb.com/) and [NodeJS](https://nodejs.org/en/) on your device.
 * Create a account on [Cloudinary](https://cloudinary.com/) and [Mapbox](https://www.mapbox.com/) and get the API key.
@@ -43,4 +45,4 @@ npm install
 nodemon app.js
 ```
 
-Will try to improve the website sooner:)
+Will try to make a few changes sooner :)
