@@ -55,6 +55,7 @@ const scriptSrcUrls = [
     "https://kit.fontawesome.com/",
     "https://cdnjs.cloudflare.com/",
     "https://cdn.jsdelivr.net",
+    "https://ajax.googleapis.com/ajax/libs/jquery/",
 ];
 const styleSrcUrls = [
     "https://kit-free.fontawesome.com/",
