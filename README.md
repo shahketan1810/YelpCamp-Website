@@ -2,13 +2,12 @@
 
 YelpCamp is a website where users can create and review campgrounds.
 In order to review or create a campground and review, you have to login/register.
-This project was part of Colt Steele's Web Developer Bootcamp on Udemy.
 
-The project was created using Node.js, Express, MongoDB, and Bootstrap. <br />
-Also Passport.js is used to handle authentication. <br />
-Cloudinary is used for cloud image storage. <br />
-MapboxGL is used to represent all the campgrounds all over the country. <br />
-Helmetjs is used to strengthen the security. <br />
+The project was created using <b>Node.js, Express, MongoDB, and Bootstrap</b>. <br />
+Also <b>Passport.js</b> is used to handle authentication. <br />
+<b>Cloudinary</b> is used for cloud image storage. <br />
+<b>MapboxGL</b> is used to represent all the campgrounds all over the country. <br />
+<b>Helmetjs</b> is used to strengthen the security. <br />
 ## Snapshots of the website
 <ul>
   <li><h4>HomePage</h4></li>
