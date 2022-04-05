@@ -8,6 +8,9 @@ Also <b>Passport.js</b> is used to handle authentication. <br />
 <b>Cloudinary</b> is used for cloud image storage. <br />
 <b>MapboxGL</b> is used to represent all the campgrounds all over the country. <br />
 <b>Helmetjs</b> is used to strengthen the security. <br />
+
+Live Link : https://pacific-ridge-40956.herokuapp.com/
+
 ## Snapshots of the website
 <ul>
   <li><h4>HomePage</h4></li>
